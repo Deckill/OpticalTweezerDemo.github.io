@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+
+<meta charset="UTF-8" />
+<title>Approval voting</title>
+
+<!--
+CS 3312, spring 2022
+Studio 2
+YOUR NAME: Sasha Montag
+-->
+
+<!-- Import a CSS stylesheet to style the page. -->
+<link href="style.css" rel="stylesheet" />   <!-- comment out to see without red lining -->
+
+</head><body>
+
+<!-- h1 is the biggest header --> 
+<h1 id="top-header">A new way to vote</h1>
+
+<!-- used p instead of other elements because p has automatic spacing between elements -->
+<p>Why be limited to voting for only one candidate?</p>
+
+<!-- fieldset generates the box around the listing where the legend is the text in the middle of the line -->
+<fieldset> 
+   <legend>A ballot using plurality voting&nbsp; </legend>
+   <!-- nested unordered list since it was only dots and not numbered -->
+   <ul>  
+      <li><label><input id="plurality-for-roosevelt" name="plurality-ballot" type="radio" />&nbsp;Theodore Roosevelt</label></li>
+      <li><label><input checked="checked" id="plurality-for-taft" name="plurality-ballot" type="radio" />&nbsp;William Howard Taft</label></li>
+      <li><label><input id="plurality-for-wilson" name="plurality-ballot" type="radio" />&nbsp;Woodrow Wilson</label></li>
+      <!-- each list item is a radio button where taft is selected and only one is allowed to be clicked at any one time (thanks to name=) -->
+   </ul>
+</fieldset>
+
+<!-- em italizes the any -->
+<p>Approval voting lets you approve <em>any</em> candidates you like.</p>
+
+<fieldset>
+   <legend>A ballot using approval voting&nbsp; </legend>
+   <ul>  
+      <li><label><input checked="checked" id="approval-for-roosevelt" type="checkbox" />&nbsp;Theodore Roosevelt</label></li>
+      <li><label><input checked="checked" id="approval-for-taft" type="checkbox" />&nbsp;William Howard Taft</label></li>
+      <li><label><input id="approval-for-wilson" type="checkbox" />&nbsp;Woodrow Wilson</label></li>
+      <!-- each list item is a checkbox and roosevelt and taft are selected (no name= means multiple can be selected at once) -->
+   </ul>
+</fieldset>
+
+<p>Some advantages:</p>
+
+<!-- ordered list since they contain numbers -->
+<ol> 
+   <li>No <a href="https://en.wikipedia.org/wiki/Spoiler_effect">spoiler effect</a>.</li>
+   <li>No <a href="https://en.wikipedia.org/wiki/Strategic_nomination">strategic nomination</a>.</li>
+   <li>No <a href="https://en.wikipedia.org/wiki/Vote_splitting">vote-splitting</a>.</li>
+   <!-- each list item contains a link via the a element, the word(s) following <a> but before </a> is what contains the link -->
+</ol>
+
+<p>And now a what-if scenario:</p>
+
+<!-- shows data in a series of rows and columns -->
+<table>  
+  <caption>1912 presidential election</caption>  <!-- like the table header -->
+   
+   <!-- 1st table row is just labeling the column headers -->
+   <tr>  
+      <th scope="col">candidate</th> 
+      <th scope="col">actual popular vote</th>
+      <th scope="col">hypothetical approval vote</th> 
+      <!-- each item is a table header <th> and designated with the col scope because they are specifically column headers (th makes them bold) -->
+   </tr>
+   
+   <!-- 2nd row is 1st data holding row -->
+   <tr>  
+      <td>Theodore Roosevelt</td>
+      <td>27.4%</td>
+      <td>52%</td>
+      <!-- each item is labeled as table data <td> since it just contains data, no scope is required (nothing is bold) -->
+   </tr>
+   
+   <!-- 3rd row is 2nd data holding row -->
+   <tr>  
+      <td>William Howard Taft</td>
+      <td>23.2%</td>
+      <td>48%</td>
+   </tr>
+   
+   <!-- 4th row is 3rd data holding row -->
+   <tr>  
+      <td>Woodrow Wilson</td>
+      <td>41.8%</td>
+      <td>43%</td>
+   </tr>
+   
+</table>
+
+<p>Enter your e-mail address to receive updates on this issue: 
+<input type="email" /> 
+<button type="button">Add me!</button> 
+</p>
+<!-- the input box is given the type email so they can input that and the button next to it is clickable and has the appropriate title -->
+<!-- the button, input and the text are all contained in <p> so that they are all together if the screen is wide enough -->
+
+</body></html>
